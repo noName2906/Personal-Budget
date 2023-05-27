@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bilance</title>
+        <link rel="shortcut icon" href="logo.png">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
+    </head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="#">Personal Budget</a></div>
+            <select name="category" required>
+                <option value="0">--Choose The Period Time--</option>
+                <option value="1">Current Month</option>
+                <option value="2">Previous Month</option>
+                <option value="3">Current Year</option>
+                <option value="4">Custom</option>
+            </select>
+            <button onclick="myFunction()" class="action_btn">Menu
+                <span class="fas fa-bars"></span>
+            </button>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div id="myDropdown" class="dropdown_menu_full_screen">
+            <li><a href="under-construction.html">Settings</a></li>
+            <li><a href="index.html" class="action_btn_logout">Logout</a></li>
+        </div>
+        <div class="dropdown_menu">
+            <li><a href="logged.html">Home</a></li>
+            <li><a href="under-construction.html">About</a></li>
+            <li><a href="under-construction.html">Contact</a></li>
+            <li><a href="index.html" class="action_btn">Logout</a></li>
+        </div>
+
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function(event) {
+        if (!event.target.matches('.action_btn')) {
+        var dropdowns = document.getElementByClassName("dropdown_menu_full_screen");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+            ? 'fa-solid fa-xmark'
+            : 'fa-solid fa-bars'
+        }
+    </script>
+
+    <div class="main-container">
+        <main class="table">
+            <section class="table-header">
+                <h2>Incomes Overview</h2>
+                <img class="table-logo" src="income-logo.png" alt="income-logo">
+            </section>
+            <section class="table-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>294.32€</strong></td>
+                            <td>12.02.2023</td>
+                            <td><img src="allegro.png" alt="allegro"> Allegro Sales </td>
+                            <td>Sold bike</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><strong>4200.00€</strong></td>
+                            <td>01.03.2023</td>
+                            <td><img src="salary.png" alt="salary"> Salary </td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><strong>68.27€</strong></td>
+                            <td>24.04.2023</td>
+                            <td><img src="bank-interest.png" alt="bank-interest"> Bank Interest </td>
+                            <td>Investment</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><strong>6830.29€</strong></td>
+                            <td>26.05.2023</td>
+                            <td><img src="bank-interest.png" alt="bank-interest"> Bank Interest </td>
+                            <td>Investment</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <div class="total">Total = 11.392,88 €</div>
+        </main>
+        <main class="table">
+            <section class="table-header">
+                <h2>Expenses Overview</h2>
+                <img class="table-logo" src="expense-logo.png" alt="expense-logo">
+            </section>
+            <section class="table-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>38.32€</strong></td>
+                            <td>16.02.2023</td>
+                            <td><img src="allegro.png" alt="allegro"> Allegro Sales </td>
+                            <td>Allegro Costs</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><strong>2200.00€</strong></td>
+                            <td>27.03.2023</td>
+                            <td><img src="salary.png" alt="salary"> Salary </td>
+                            <td>Taxes</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><strong>395.28€</strong></td>
+                            <td>24.04.2023</td>
+                            <td><img src="bank-interest.png" alt="bank-interest"> Bank Interest </td>
+                            <td>Investment Taxes</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><strong>29.28€</strong></td>
+                            <td>24.05.2023</td>
+                            <td><img src="bank-interest.png" alt="bank-interest"> Bank Interest </td>
+                            <td>Investment Taxes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <div class="total">Total = 2662,88 €</div>
+        </main>
+    </div>
+    <h1 class="heading">Budget Overview</h1>
+    <div class="wrapper">
+
+        <div class="pie-wrap">
+
+            <div class="light-yellow entry">
+                <p>25%</p>
+                <p class="entry-value">Allegro Sales</p>
+            </div>
+            <div class="sky-blue entry">
+                <p>50%</p>
+                <p class="entry-value">Salary</p>
+            </div>
+            <div class="pink entry">
+                <p>25%</p>
+                <p class="entry-value">Bank Interest</p>
+            </div>
+        </div>
+    <div class="key-wrap"></div>
+</div>
+</header>
+</body>
+</html>

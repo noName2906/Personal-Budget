@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Main Page - Logged</title>
+        <link rel="shortcut icon" href="logo.png">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
+    </head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="#">Personal Budget</a></div>
+            <ul class="links">
+                <li><a href="logged.html">Home</a></li>
+                <li><a href="under-construction.html">About</a></li>
+                <li><a href="under-construction.html">Contact</a></li>
+            </ul>
+            <button onclick="myFunction()" class="action_btn">Menu
+                <span class="fas fa-bars"></span>
+            </button>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div id="myDropdown" class="dropdown_menu_full_screen">
+            <li><a href="under-construction.html">Settings</a></li>
+            <li><a href="index.html" class="action_btn_logout">Logout</a></li>
+        </div>
+        <div class="dropdown_menu">
+            <li><a href="logged.html">Home</a></li>
+            <li><a href="under-construction.html">About</a></li>
+            <li><a href="under-construction.html">Contact</a></li>
+            <li><a href="index.html" class="action_btn">Logout</a></li>
+        </div>
+
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function(event) {
+        if (!event.target.matches('.action_btn')) {
+        var dropdowns = document.getElementByClassName("dropdown_menu_full_screen");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+            ? 'fa-solid fa-xmark'
+            : 'fa-solid fa-bars'
+        }
+    </script>
+
+    <div class="main-container">
+        <div class="main-text">
+            <h1>Thanks to Personal Budget you can hold the control over your finances</h1>
+        </div>
+            <div class="image-logged">
+                <img src="income.png" alt="income">
+                <div class="description">
+                    <a href="income.html"><h2>Add your incomes</h2></a>
+                </div>
+            </div>
+            <div class="image-logged">
+                <img src="expenses.png" alt="expenses">
+                <div class="description">
+                    <a href="expense.html"><h2>Control your expenses</h2></a>
+                </div>
+            </div>
+            <div class="image-logged">
+                <img src="scale.png" alt="bilance">
+                <div class="description">
+                    <a href="bilance.html"><h2>Manage your bilance</h2></a>
+                </div>
+            </div>
+    </div>
+</header>
+</body>
+</html>
